@@ -47,7 +47,7 @@
                 <button class="btn btn-success" id="btn-save">Salvar</button>
                 </div>
             </div><br><br><hr>
-            <table id="tbl_relatorio" class="table table-striped table-bordered" style="width:100%">
+            <table id="tbl_reg" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>Empresa</th>
@@ -58,7 +58,7 @@
         </thead>
         <tbody>
            <?php
-           show_tbl($con)
+           show_tbl($con);
            ?>
         </tbody>
     </table>
