@@ -41,6 +41,27 @@ class Report {
                 
         }
 
+        function add_company($con){
+            $empresa = $_GET['empresa'];
+            $cnpj = $_GET['cnpj'];
+            $setor = $_GET['setor'];
+            $plano = $_GET['plano'];
+            $dt_inicio = $_GET['data_inicio'];
+    
+            $query = "insert into  " . $this->table . " values(null, '".$cnpj."','".$empresa."','".$setor."',".$plano.",'".$dt_inicio."',null );";
+    
+            $result = $con->query($query);
+    
+            if ($result === TRUE) {
+                echo "A empresa ".$empresa." foi inserida na base de clientes com sucesso";
+                $log_dados = new Report();
+                $log_dados->log_dados($query);
+            }
+            else{
+                echo "Houve um problema ao inserir o registro<br> ".mysqli_error($con);
+            }
+        }
+
         function log_dados($texto,$bAppend=true){
                 if($bAppend){
                     file_put_contents($this->log, $texto.PHP_EOL,FILE_APPEND);

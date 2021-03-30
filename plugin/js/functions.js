@@ -23,7 +23,7 @@ $(document).ready(function() {
             });
         }
         else {
-            $.post('controller.php?insere=1&empresa='+empresa+'&cnpj='+cnpj+'&setor='+setor+'&plano='+plano+'&data_inicio='+data_inicio, function(data, status){
+            $.post('controller/add_company.php?&empresa='+empresa+'&cnpj='+cnpj+'&setor='+setor+'&plano='+plano+'&data_inicio='+data_inicio, function(data, status){
                 $.alert({
                     title: 'Inclusão de Registros',
                     content: data,
@@ -31,7 +31,7 @@ $(document).ready(function() {
                     typeAnimated: true,
                     buttons: {
                         ok: function () {
-                            $(location).attr('href', 'cadastro_empresas.php')
+                            $(location).attr('href', 'add_company.php')
 
                         },
 

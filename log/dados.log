@@ -9,3 +9,4 @@ insert into  empresas_cadastradas values(null, '06137137000179','clothes store',
 insert into  empresas_cadastradas values(null, '92540084000174','pudim e cia','alimenticio',1,'2020-02-05',null );
 insert into  empresas_cadastradas values(null, '16370667000116','floricultura orquidea','vendas',1,'2020-01-20',null );
 insert into  empresas_cadastradas values(null, '16413082000136','casa de shows mega','entretenimento',2,'2019-04-11',null );
+insert into  empresas_cadastradas values(null, '50906948000189','casa do papel','vendas',2,'2021-03-26',null );

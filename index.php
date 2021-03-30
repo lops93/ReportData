@@ -12,8 +12,13 @@
   <div class="main">
     <div class="container">
       <div class="row">
-        <canvas id="myChart"></canvas>
-      </div>
+        <div class="col-md-6">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="myChart2"></canvas>
+        </div>     
+     </div>
     </div>
     <footer>
       <a href="sobre.html">Sobre nós</a>
