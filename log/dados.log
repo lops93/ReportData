@@ -1,0 +1,12 @@
+insert into  empresas_cadastradas values(null, '07819477000142','confeitaria bolos e doces','alimenticio',1,'2020-08-02',null );
+insert into  empresas_cadastradas values(null, '95297684000141','cinema local','entretenimento',3,'2020-05-17',null );
+insert into  empresas_cadastradas values(null, '85295209000182','Restaurante vegano','alimenticio',1,'2020-12-07',null );
+insert into  empresas_cadastradas values(null, '97520192000107','estudio m','marketing',2,'2020-02-26',null );
+insert into  empresas_cadastradas values(null, '46868105000168','casa da empasa','alimenticio',1,'2019-06-25',null );
+insert into  empresas_cadastradas values(null, '19562510000180','clube de regatas fun','esportes',3,'2020-01-31',null );
+insert into  empresas_cadastradas values(null, '99926936000105','promotech','tecnologia',2,'2020-11-03',null );
+insert into  empresas_cadastradas values(null, '06137137000179','clothes store','vendas',1,'2020-04-16',null );
+insert into  empresas_cadastradas values(null, '92540084000174','pudim e cia','alimenticio',1,'2020-02-05',null );
+insert into  empresas_cadastradas values(null, '16370667000116','floricultura orquidea','vendas',1,'2020-01-20',null );
+insert into  empresas_cadastradas values(null, '16413082000136','casa de shows mega','entretenimento',2,'2019-04-11',null );
+insert into  empresas_cadastradas values(null, '50906948000189','casa do papel','vendas',2,'2021-03-26',null );
