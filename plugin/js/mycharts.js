@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  /********************Grafico 1 ********************/
     $.ajax({
         url: "http://localhost/projetos/ReportData/controller/graphics.php?grafico1=1",
         method: "GET",
@@ -37,6 +38,7 @@ $(document).ready(function() {
           console.log(data);
         }
       });
+        /********************Grafico 2 ********************/
         $.ajax({
         url: "http://localhost/projetos/ReportData/controller/graphics.php?grafico2=1",
         method: "GET",
@@ -55,20 +57,27 @@ $(document).ready(function() {
             datasets : [
               {
                 label: 'Valor total por setor',
-                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(30,144,255)',
                 borderColor: 'rgb(255, 99, 132)',
                 hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
                 hoverBorderColor: 'rgba(200, 200, 200, 1)',
                 data: valor
               }
-            ]
+            ],
           };
     
-          var ctx = document.getElementById('myChart2').getContext('2d');
+          var ctx2 = document.getElementById('myChart2').getContext('2d');
     
-          var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: chartdata
+          var myChart2 = new Chart(ctx2, {
+            type: 'horizontalBar',
+            data: chartdata,
+            options: {
+              scales: {
+                x: {
+                  beginAtZero: true
+                }
+              }
+            },
           });
         },
         error: function(data) {
