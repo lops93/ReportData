@@ -19,6 +19,11 @@
           <canvas id="myChart2"></canvas>
         </div>     
      </div>
+     <div class="row">
+        <div class="col-md-6">
+          <canvas id="myChart3"></canvas>
+        </div>    
+     </div>
     </div>
     <footer>
       <a href="sobre.html">Sobre nós</a>

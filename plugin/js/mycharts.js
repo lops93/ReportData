@@ -5,24 +5,24 @@ $(document).ready(function() {
         method: "GET",
         success: function(data) {
           //console.log(data);
-          var nome_plano = [];
-          var valor = [];
+          var mes = [];
+          var num = [];
     
           for(var i in data) {
-            nome_plano.push("Plano " + data[i].nome_plano);
-            valor.push(data[i].valor);
+            mes.push("mes " + data[i].mes);
+            num.push(data[i].num);
           }
     
           var chartdata = {
-            labels: nome_plano,
+            labels: mes,
             datasets : [
               {
-                label: 'Valor total por plano',
+                label: 'Numero de adesões por mês',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
                 hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                data: valor
+                data: num
               }
             ]
           };
@@ -31,7 +31,18 @@ $(document).ready(function() {
     
           var myBarChart = new Chart(ctx, {
             type: 'bar',
-            data: chartdata
+            data: chartdata,
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                      min: 0,
+                      max: 5,
+                      stepSize: 1
+                  }
+              }]
+              }
+            },
           });
         },
         error: function(data) {
@@ -84,4 +95,51 @@ $(document).ready(function() {
           console.log(data);
         }
       });  
+        /********************Grafico 3 ********************/
+        $.ajax({
+          url: "http://localhost/projetos/ReportData/controller/graphics.php?grafico3=1",
+          method: "GET",
+          success: function(data) {
+            //console.log(data);
+            var nome_plano = [];
+            var valor = [];
+      
+            for(var i in data) {
+              nome_plano.push("Setor " + data[i].nome_plano);
+              valor.push(data[i].valor);
+            }
+      
+            var chartdata = {
+              labels: nome_plano,
+              datasets : [
+                {
+                  label: 'Valor total por setor',
+                  backgroundColor: ["rgb(250,128,114)", "rgb(30,144,255)", "rgb(102,205,170)"],
+                  borderColor: 'rgb(255, 99, 132)',
+                  hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
+                  hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                  data: valor
+                }
+              ],
+            };
+      
+            var ctx3 = document.getElementById('myChart3').getContext('2d');
+      
+            var myChart3 = new Chart(ctx3, {
+              type: 'doughnut',
+              data: chartdata,
+              options: {
+                scales: {
+                  x: {
+                    suggestedMin: 0, 
+                    beginAtZero: true
+                  }
+                }
+              },
+            });
+          },
+          error: function(data) {
+            console.log(data);
+          }
+        }); 
 });
