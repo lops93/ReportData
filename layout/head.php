@@ -29,4 +29,5 @@
    <script src="plugin/js/mytables.js"></script>
    <script src="plugin/js/functions.js"></script>
    
+   <title>Report Data</title>
 </head>

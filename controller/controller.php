@@ -7,7 +7,13 @@ class Report {
         public $log = "../log/dados.log";
 
         function getData($con) {
-                $query = "SELECT nome_empresa,setor_empresa FROM empresas_cadastradas";
+                $query = "SELECT nome_empresa,setor_empresa, nome_plano,
+                CASE
+                WHEN data_fim is null THEN 'ativo'
+                ELSE 'inativo'
+                END 
+                FROM empresas_cadastradas
+                inner join plano on plano_contratado = cod_plano";
                 $result = $con -> query($query);
                 $result = $result->fetch_all();
          

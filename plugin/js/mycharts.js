@@ -69,7 +69,7 @@ $(document).ready(function() {
               {
                 label: 'Valor total por setor',
                 backgroundColor: 'rgb(30,144,255)',
-                borderColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(30,144,255)',
                 hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
                 hoverBorderColor: 'rgba(200, 200, 200, 1)',
                 data: valor
@@ -115,7 +115,7 @@ $(document).ready(function() {
                 {
                   label: 'Valor total por setor',
                   backgroundColor: ["rgb(250,128,114)", "rgb(30,144,255)", "rgb(102,205,170)"],
-                  borderColor: 'rgb(255, 99, 132)',
+                  borderColor: ["rgb(210, 107, 96)", "rgb(29, 120, 211)", "rgb(85, 170, 142)"],
                   hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
                   hoverBorderColor: 'rgba(200, 200, 200, 1)',
                   data: valor
@@ -127,6 +127,53 @@ $(document).ready(function() {
       
             var myChart3 = new Chart(ctx3, {
               type: 'doughnut',
+              data: chartdata,
+              options: {
+                scales: {
+                  x: {
+                    suggestedMin: 0, 
+                    beginAtZero: true
+                  }
+                }
+              },
+            });
+          },
+          error: function(data) {
+            console.log(data);
+          }
+        }); 
+        /********************Grafico 4 ********************/
+        $.ajax({
+          url: "http://localhost/projetos/ReportData/controller/graphics.php?grafico4=1",
+          method: "GET",
+          success: function(data) {
+            //console.log(data);
+            var mes = [];
+            var valor = [];
+      
+            for(var i in data) {
+              mes.push(data[i].mes);
+              valor.push(data[i].valor);
+            }
+      
+            var chartdata = {
+              labels: mes,
+              datasets : [
+                {
+                  label: 'Vendas',
+                  backgroundColor: ["rgb(250,128,114)", "rgb(30,144,255)", "rgb(102,205,170)"],
+                  borderColor: 'rgb(255, 99, 132)',
+                  hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
+                  hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                  data: valor
+                }
+              ],
+            };
+      
+            var ctx4 = document.getElementById('myChart4').getContext('2d');
+      
+            var myChart4 = new Chart(ctx4, {
+              type: 'line',
               data: chartdata,
               options: {
                 scales: {

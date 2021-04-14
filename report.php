@@ -12,6 +12,8 @@
                 <tr>   
                     <th>Company</th>
                     <th>sector</th>
+                    <th>plan</th>
+                    <th>Status</th>
                 </tr>
             </thead>  
             <tbody>

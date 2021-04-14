@@ -52,4 +52,23 @@ $con->close();
 
 print json_encode($data);
 }
+
+if ( isset($_GET["grafico4"])=='1' ) {
+  $query = "select extract(year_month from data_contrato) as mes,
+  round(SUM(valor) OVER(ORDER BY mes),2) as valor
+  from empresas_cadastradas 
+  inner join plano on plano_contratado = cod_plano group by mes;";
+
+$result = $con->query($query);
+
+$data = array();
+foreach ($result as $row) {
+  $data[] = $row;
+}
+$result->close();
+
+$con->close();
+
+print json_encode($data);
+}
 ?>

@@ -23,6 +23,9 @@
         <div class="col-md-6">
           <canvas id="myChart3"></canvas>
         </div>    
+        <div class="col-md-6">
+          <canvas id="myChart4"></canvas>
+        </div> 
      </div>
     </div>
     <footer>
